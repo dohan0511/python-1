@@ -1,0 +1,24 @@
+import random;
+import time;
+
+class dice:
+    def __init__(self):
+        self.diceNum = 'nonum';
+
+    def rollTheDice(self):
+        print("\n주사위가 굴러갑니다.", end='');
+        time.sleep(1);
+        print(".", end='');
+        time.sleep(1);
+        print(".", end='');
+        time.sleep(1);
+        print("\n\n[숫자",random.randint(1,6),"이(가) 나왔습니다]\n");
+        time.sleep(1);
+        
+    def rollTheDiceNum(self):
+        print("\n\n[숫자",random.randint(1,6),"이(가) 나왔습니다]\n");
+
+d = dice();
+
+for i in range(0, 10):
+    d.rollTheDice();
