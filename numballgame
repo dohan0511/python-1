@@ -1,0 +1,28 @@
+import random
+
+class numBaseballGame:
+    def numAnswer(self, cm):
+        set1 = set();
+        
+        while(cm != len(set1)):
+            set1.add(random.randint(0,9));
+
+        return set1;
+
+    def playerNum(self, pm):
+        list1 = [];
+        print("숫자", pm, "자리를 입력하시오.");
+        num = input();
+
+        for e in range(0, pm):
+            list1.append(num[e]);
+
+        return list1;
+    
+
+g = numBaseballGame;
+
+c = g.numAnswer(g,3);
+p = g.playerNum(g,3);
+
+print(p);
