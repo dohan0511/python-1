@@ -1,0 +1,72 @@
+import random
+
+class numBaseballGame:
+    def __init__(self):
+        self.numAnswer;
+        
+    def numAnswer(self, cm):
+        set1 = set();
+        
+        while(cm != len(set1)):
+            set1.add(random.randint(0,9));
+
+        listc = list(set1);
+        
+        return listc;
+
+    def playerNum(self, pm):
+        list1 = [];
+        print("숫자", pm, "자리를 입력하시오.");
+        num = input();
+
+        for e in range(0, pm):
+            list1.append(num[e]);
+
+        return list1;
+
+    def result(self, cn, pn):
+        strike = 0;
+        ball = 0;
+        o = 0;
+        out = 0;
+        
+        for i in range(0, len(pn)):
+            for j in range(0, len(cn)):
+                if cn[j] == pn[i]:
+                    if i == j:
+                        strike += 1;
+                        break;
+                    else:
+                        ball += 1;
+                        break;
+                else:
+                    o += 1;
+                    
+            if o == 3:
+                out += 1;
+            o = 0;
+
+        if strike == 3:
+            print("Congratulations you got the problem right");
+            return 1;
+
+        else:
+            print("strike : ",strike, "\t", end='');
+            print("ball : ",ball, "\t", end='');
+            print("out : ",out, "\n");
+            return 0;
+    
+
+g = numBaseballGame();
+qn = int(input("몇자리 숫자를 맞추시겠습니까? "));
+c = g.numAnswer(qn);
+print(c);
+p = g.playerNum(qn);
+r = g.result(c,p);
+
+while r != 1:
+    p = g.playerNum(qn);
+    r = g.result(c,p);
+    
+
+
