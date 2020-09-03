@@ -86,7 +86,7 @@ g3 = numBaseballGame();
 result = [0,0,0];
 radd = 0;
 
- while radd != 3:
+while radd != 3:
     if result[0] != 1:
         result[0] = g1.playerNum(1);
     if result[1] != 1:
